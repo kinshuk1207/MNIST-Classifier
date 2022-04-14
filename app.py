@@ -10,11 +10,12 @@ import io
 import re
 import os
 
+DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 app = Flask(__name__)
 app.config['ENV'] = 'development'
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 
-model = CNN()
+model = CNN().to(DEVICE)
 model.load_state_dict(torch.load('model.pt', map_location=torch.device('cpu')))
 model.eval()
 

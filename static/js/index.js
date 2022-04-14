@@ -26,7 +26,7 @@ canvas.onmousemove = function (e) {
     Mouse.x = e.pageX - this.offsetLeft
     Mouse.y = e.pageY - this.offsetTop
     if (painting) {
-        context.lineWidth = 10
+        context.lineWidth = 20
         context.lineJoin = 'round'
         context.lineCap = 'round'
         context.strokeStyle = 'white'
